@@ -3,6 +3,7 @@ import { Component} from '@angular/core';
 class Item {
      name: string;
      price: number;
+     isBought: boolean;
 
      constructor(name: string, price: number) {
           this.name = name;
@@ -18,7 +19,7 @@ class Item {
 export class AppComponent{ 
      items: Item[] = 
      [
-          {name: "Bread", price: 12}
+          {name: "Bread", price: 12,isBought:false}
      ];
      
      name: string= this.items[0].name;
