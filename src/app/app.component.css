@@ -1,0 +1,6 @@
+h1, h2{color:rgb(5, 5, 219);}
+p{font-size:25px;}
+:host {
+    font-family: Verdana;
+    color: #995;
+}
