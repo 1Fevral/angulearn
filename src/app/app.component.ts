@@ -1,26 +1,24 @@
 import { Component} from '@angular/core';
- 
-class Item {
-     name: string;
-     price: number;
-     isBought: boolean;
-
-     constructor(name: string, price: number) {
-          this.name = name;
-          this.price = price;
-     }
-}
 
 @Component({
     selector: 'my-app',
-    template: `<child-comp [name]="name"></child-comp>
-                <input type="text" [(ngModel)]="name" />`
+    templateUrl: './app.component.html',
+    styleUrls: ['app.component.css'] 
 })
 export class AppComponent{ 
-     items: Item[] = 
-     [
-          {name: "Bread", price: 12,isBought:false}
-     ];
+     public phone: Phone = new Phone ("",null,"");
      
-     name: string= this.items[0].name;
+     public phones: Phone[] = [];
+     public manufacturers = ["","Apple","Samsung"];
+
+     addPhone() {
+          this.phones.push(new Phone(this.phone.title,this.phone.price,this.phone.manufacturer));
+     }
+}
+
+export class Phone {
+     constructor(public title: string,
+                 public price: number,
+                 public manufacturer: string)
+               { }
 }
